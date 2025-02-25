@@ -903,6 +903,10 @@ footer .developer a span {
 .dark {
   background-color: var(--dark-color);
 }
+.dark .settings-box {
+  background-color: var(--dark-color-alt);
+  border-color: #333;
+}
 .dark .header {
   background-color: var(--dark-color);
 }
