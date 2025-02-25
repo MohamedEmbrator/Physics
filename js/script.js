@@ -1,13 +1,27 @@
+const scrollButton = document.querySelector(".scroll-button");
+window.onscroll = () => {
+  if (window.scrollY >= 600) {
+    scrollButton.style.display = "flex";
+  } else {
+    scrollButton.style.display = "none";
+  }
+};
+scrollButton.onclick = function () {
+  window.scrollTo({
+    left: 0,
+    top: 0,
+    behavior: "smooth"
+  });
+};
 const megaMenuButton = document.querySelector(
   ".header .main-nav > .mega-menu-button"
 );
 const megaMenu = document.querySelector(".header .main-nav > li .mega-menu");
-
+const megaMenuImage = document.querySelector(".header .mega-menu img");
 megaMenuButton.addEventListener("click", function (event) {
   event.stopPropagation();
   megaMenu.classList.toggle("show");
 });
-
 document.addEventListener("click", function (event) {
   if (
     !megaMenu.contains(event.target) &&
@@ -100,3 +114,48 @@ function randomizeBackground() {
   }
 }
 randomizeBackground();
+const darkModeButtons = document.querySelectorAll(
+  ".settings-box .dark-mode span"
+);
+let darkModeLocalStorage = window.localStorage.getItem("dark_mode");
+if (darkModeLocalStorage != null) {
+  megaMenuImage.src = "imgs/megamenu-inverted.png";
+  document.body.classList.add("dark");
+  darkModeButtons.forEach((el) => {
+    el.classList.remove("active");
+    document
+      .querySelector(".settings-box .dark-mode .on")
+      .classList.add("active");
+  });
+}
+darkModeButtons.forEach((el) => {
+  el.addEventListener("click", function (e) {
+    darkModeButtons.forEach((element) => element.classList.remove("active"));
+    e.target.classList.add("active");
+    if (e.target.classList.contains("on")) {
+      document.body.classList.add("dark");
+      megaMenuImage.src = "imgs/megamenu-inverted.png";
+      window.localStorage.setItem("dark_mode", "dark");
+    } else {
+      megaMenuImage.src = "imgs/megamenu.png";
+      document.body.classList.remove("dark");
+      window.localStorage.removeItem("dark_mode");
+    }
+  });
+});
+const languageButtons = document.querySelectorAll(
+  ".settings-box .language span"
+);
+
+languageButtons.forEach((el) => {
+  el.addEventListener("click", function (e) {
+    languageButtons.forEach((element) => element.classList.remove("active"));
+    e.target.classList.add("active");
+  });
+});
+document.querySelector(".reset-options").onclick = function () {
+  localStorage.clear();
+  window.location.reload();
+};
+document.querySelector("footer .footer-title sub").innerHTML =
+  new Date().getFullYear();
