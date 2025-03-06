@@ -8,6 +8,7 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Physics Department - Faculty of Science Al-Azhar University</title>
+    <link rel="shortcut icon" href="imgs/logo-en.png" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,7 +18,8 @@
     <link rel="stylesheet" href="css/all.min.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body>
+  <body class="bg-sky-950">
+    <div class="scroll-progress"></div>
     <div class="settings-box">
       <div class="settings-icon">
         <i class="fa-solid fa-gear icon"></i>
@@ -92,75 +94,109 @@
         </a>
         <ul class="main-nav">
           <li><a href="/" class="active">Home</a></li>
-          <li><a href="pages/about.html">About</a></li>
-          <li><a href="/laboratories">Laboratories</a></li>
+          <li>
+            <a href="#"> <i class="fa-solid fa-angle-up"></i> About</a>
+            <ul>
+              <li class="active">
+                <a href="pages/about.html">The Introduction</a>
+              </li>
+              <li>
+                <a href="">Vision, Mission and Goals</a>
+              </li>
+              <li>
+                <a href="">Organizational Structure</a>
+              </li>
+              <li>
+                <a href="">Research Plan</a>
+              </li>
+              <li><a href="">Quality Assurance</a></li>
+              <li><a href="">Department Graduates</a></li>
+              <li><a href="">Record of Commitment</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="/laboratories"
+              ><i class="fa-solid fa-angle-up"></i> Laboratories</a
+            >
+            <ul>
+              <li class="active">
+                <a href="#">Laboratory 1</a>
+              </li>
+              <li>
+                <a href="">Laboratory 2</a>
+              </li>
+              <li>
+                <a href="">Laboratory 3</a>
+              </li>
+              <li>
+                <a href="">Laboratory 4</a>
+              </li>
+              <li><a href="">Laboratory 5</a></li>
+            </ul>
+          </li>
           <li class="mega-menu-button">
-            <a href="#">More Services</a>
+            <a href="#"> More Services</a>
             <!-- Start Megamenu -->
-            <div class="mega-menu">
-              <div class="image">
-                <img decoding="async" src="imgs/megamenu.png" alt="" />
-              </div>
-              <ul class="links">
-                <li>
-                  <a href="#testimonials"
-                    ><i class="fa-solid fa-sheet-plastic"></i> Academic
-                    Programs</a
-                  >
-                </li>
-                <li>
-                  <a href="#team"
-                    ><i class="far fa-user fa-fw"></i> Department Members</a
-                  >
-                </li>
-                <li>
-                  <a href="#services"
-                    ><i class="fa-solid fa-users"></i> Staff</a
-                  >
-                </li>
-                <li>
-                  <a href="#our-skills"
-                    ><i class="fa-solid fa-graduation-cap"></i> Postgraduate
-                    Programs</a
-                  >
-                </li>
-                <li>
-                  <a href="#work-steps"
-                    ><i class="fa-solid fa-list-check"></i> Study plan</a
-                  >
-                </li>
-              </ul>
-              <ul class="links">
-                <li>
-                  <a href="#events"
-                    ><i class="far fa-calendar-alt fa-fw"></i> Events &amp;
-                    News</a
-                  >
-                </li>
-                <li>
-                  <a href="#pricing"
-                    ><i class="fas fa-server fa-fw"></i> Student services</a
-                  >
-                </li>
-                <li>
-                  <a href="#video"
-                    ><i class="far fa-play-circle fa-fw"></i> Members account</a
-                  >
-                </li>
-                <li>
-                  <a href="#stats"
-                    ><i class="fa-solid fa-book"></i> E - Books</a
-                  >
-                </li>
-                <li>
-                  <a href="#discount"
-                    ><i class="fa-solid fa-diagram-project"></i> Projects</a
-                  >
-                </li>
-              </ul>
-            </div>
             <!-- End Megamenu -->
           </li>
+          <div class="mega-menu">
+            <div class="image">
+              <img decoding="async" src="imgs/megamenu.png" alt="" />
+            </div>
+            <ul class="links">
+              <li>
+                <a href="#testimonials"
+                  ><i class="fa-solid fa-sheet-plastic"></i> Academic
+                  Programs</a
+                >
+              </li>
+              <li>
+                <a href="#team"
+                  ><i class="far fa-user fa-fw"></i> Department Members</a
+                >
+              </li>
+              <li>
+                <a href="#services"><i class="fa-solid fa-users"></i> Staff</a>
+              </li>
+              <li>
+                <a href="#our-skills"
+                  ><i class="fa-solid fa-graduation-cap"></i> Postgraduate
+                  Programs</a
+                >
+              </li>
+              <li>
+                <a href="#work-steps"
+                  ><i class="fa-solid fa-list-check"></i> Study plan</a
+                >
+              </li>
+            </ul>
+            <ul class="links">
+              <li>
+                <a href="#events"
+                  ><i class="far fa-calendar-alt fa-fw"></i> Events &amp;
+                  News</a
+                >
+              </li>
+              <li>
+                <a href="#pricing"
+                  ><i class="fas fa-server fa-fw"></i> Student services</a
+                >
+              </li>
+              <li>
+                <a href="#video"
+                  ><i class="far fa-play-circle fa-fw"></i> Members account</a
+                >
+              </li>
+              <li>
+                <a href="#stats"><i class="fa-solid fa-book"></i> E - Books</a>
+              </li>
+              <li>
+                <a href="#discount"
+                  ><i class="fa-solid fa-diagram-project"></i> Projects</a
+                >
+              </li>
+            </ul>
+          </div>
         </ul>
       </div>
     </div>
@@ -352,7 +388,10 @@
         </h4>
       </div>
       <p class="developer">
-        Developed By <a href="https://www.youtube.com/@code-society" target="_blank">&lt; <span>Engineer\ Mohamed</span> &gt;</a>
+        Developed By
+        <a href="https://www.youtube.com/@code-society" target="_blank"
+          >&lt; <span>Engineer\ Mohamed</span> &gt;</a
+        >
       </p>
     </footer>
     <script src="js/script.js"></script>
