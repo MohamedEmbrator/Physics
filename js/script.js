@@ -1,11 +1,24 @@
+const scrollProgress = document.querySelector(".scroll-progress");
+window.addEventListener("scroll", function () {
+  if (window.scrollY >= 50) {
+    scrollProgress.style.display = "block";
+  } else {
+    scrollProgress.style.display = "none";
+  }
+  let height =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+  let scrollTop = document.documentElement.scrollTop;
+  scrollProgress.style.width = `${(scrollTop / height) * 100}%`;
+});
 const scrollButton = document.querySelector(".scroll-button");
-window.onscroll = () => {
+window.addEventListener("scroll", () => {
   if (window.scrollY >= 600) {
     scrollButton.style.display = "flex";
   } else {
     scrollButton.style.display = "none";
   }
-};
+});
 scrollButton.onclick = function () {
   window.scrollTo({
     left: 0,
@@ -13,10 +26,16 @@ scrollButton.onclick = function () {
     behavior: "smooth"
   });
 };
+document.querySelectorAll(".header .main-nav > li > a").forEach(
+  (el) =>
+    (el.onclick = function (e) {
+      e.preventDefault();
+    })
+);
 const megaMenuButton = document.querySelector(
   ".header .main-nav > .mega-menu-button"
 );
-const megaMenu = document.querySelector(".header .main-nav > li .mega-menu");
+const megaMenu = document.querySelector(".header .main-nav .mega-menu");
 const megaMenuImage = document.querySelector(".header .mega-menu img");
 megaMenuButton.addEventListener("click", function (event) {
   event.stopPropagation();
